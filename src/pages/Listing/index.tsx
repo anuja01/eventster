@@ -1,12 +1,18 @@
 import React from "react";
-import Article from "../../components/Article";
+import EventSummary from "../../components/EventSummary";
 
 const Listing = () => {
+  // mocks
+  const eventList = [
+    { id: 1, name: "My Event 1" },
+    { id: 2, name: "My Event 2" },
+    { id: 3, name: "My Event 3" }
+  ];
   return (
     <>
-      <Article test1="test text1" test2={1}/>
-      <Article test1="test text2" test2={2}/>
-      <Article test1="test text3" test2={3}/>
+      {eventList.map((event) => (
+        <EventSummary key={event.id} eventId={event.id} eventName={event.name} />
+      ))}
     </>
   );
 };

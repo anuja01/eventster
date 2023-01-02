@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
 
 const StyledWrapper = styled.div`
@@ -11,7 +11,7 @@ const StyledImage = styled.img`
 const Slider = ({
   showSlider = true,
   setShowSlider,
-  image = "https://coreui.io/react/docs/static/react-83088efde08a5dedde9f67a954cb4b5b.jpg"
+  image
 }: Slider) => {
   return (
     <>
@@ -26,7 +26,7 @@ const Slider = ({
 
 interface Slider {
   showSlider: boolean;
-  setShowSlider: void;
+  setShowSlider: Dispatch<SetStateAction<boolean>>;
   image: string;
 }
 export default Slider;
